@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar-fixed {
+  @apply bg-white bg-opacity-50 fixed z-[999];
+  backdrop-filter: blur(5px);
+}
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+
+.hamburger-active > span:nth-child(3) {
+  @apply origin-bottom-left -rotate-45;
+}
+
+.input-style {
+  @apply [&>*]:bg-slate-200 [&>*]:my-[6px] [&>*]:h-[35px] [&>*]:border
+  [&>*]:border-orange-400 [&>*]:rounded-md [&>*]:block [&>*]:w-full [&>*]:px-2;
+}

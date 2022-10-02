@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/output.css" />
+    <title>Konvert-Cuy</title>
+  </head>
+  <body>
+    <div
+      class="navbar bg-transparent mb-96 absolute top-0 items-center transition duration-300 w-full flex h-[50px] z-10"
+    >
+      <div class="container">
+        <div class="flex items-center justify-between relative">
+          <div class="title py-2 px-7">
+            <h2 class="text-2xl text-cyan-700 font-medium">Konvert Cuy</h2>
+          </div>
+          <div class="humberger flex px-2 items-center">
+            <button
+              id="hamburger"
+              class="block absolute right-4 [&>*]:bg-slate-900 [&>*]:block [&>*]:w-[30px] [&>*]:h-[2px] [&>*]:my-2 [&>*]:transition [&>*]:duration-300 [&>span:nth-child(1)]:origin-top-left [&>span:nth-child(2)]:origin-bottom-left"
+            >
+              <span class="hamberger-line"></span>
+              <span class="hamberger-line"></span>
+              <span class="hamberger-line"></span>
+            </button>
+            <nav
+              id="nav-menu"
+              class="hidden absolute py-5 px-3 w-full drop-shadow-md transition duration-300 bg-white rounded-lg max-w-[250px] right-4 -mt-1 -bottom-[197px]"
+            >
+              <ul class="block [&>li>*]:text-orange-700">
+                <li
+                  class="p-2 drop-shadow-lg w-full bg-teal-100 my-2 rounded-md"
+                >
+                  <a href="#suhu">Suhu</a>
+                </li>
+                <li
+                  class="p-2 drop-shadow-lg w-full bg-teal-100 my-2 rounded-md"
+                >
+                  <a href="#suhu">Masa</a>
+                </li>
+                <li
+                  class="p-2 drop-shadow-lg w-full bg-teal-100 my-2 rounded-md"
+                >
+                  <a href="#suhu">Jarak</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section
+      class="pt-16 lg:px-20 lg:flex lg:flex-wrap lg:h-screen lg:justify-around"
+      id="main"
+    >
+      <div class="container px-5 z-0">
+        <div
+          class="w-full lg:w-[950px] lg:mx-auto flex justify-center lg:items-center lg:relative lg:top-20 p-4 bg-orange-500 items-center h-[150px] rounded-3xl drop-shadow-md"
+        >
+          <h2 class="text-lg text-white" id="temps-result">
+            Konversi Suhu Akan Tampil Di sini
+          </h2>
+        </div>
+      </div>
+      <div class="container lg:w-[400px] lg:my-24 px-5 my-5 lg:relative">
+        <div class="w-full">
+          <h2 class="font-bold text-orange-200 text-2xl">
+            Konvert Suhu Celcius
+          </h2>
+          <p class="text-slate-400 py-2">
+            Ketik Jumlah Yang ingin anda konversi dalam kotak input untuk
+            melihat hasilnya di tabel
+          </p>
+        </div>
+        <div class="input-style w-full">
+          <input id="number" type="text" placeholder="Masukan Angka" />
+          <input id="temperaturs1" type="text" value="Celcius" disabled />
+          <select name="" id="temperaturs2">
+            <option>-- Masukan Satuan Suhu --</option>
+            <option value="Celcius">Celcius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Reamur">Reamur</option>
+            <option value="Kelvin">Kelvin</option>
+          </select>
+        </div>
+        <button
+          class="border lg:w-32 bg-amber-700 text-white px-5 py-1 rounded-md absolute right-4 lg:absolute lg:-bottom-10"
+          onclick="heandleTemps()"
+        >
+          Konvert
+        </button>
+      </div>
+
+      <div class="container lg:w-[400px] lg:my-24 w-full mt-16 px-4">
+        <table class="border-collapse border w-full">
+          <thead>
+            <tr>
+              <th
+                class="border border-slate-400 text-white text-center bg-orange-500 py-2 px-5"
+              >
+                Satuan Suhu
+              </th>
+              <th
+                class="border border-slate-400 text-white text-center bg-orange-500 py-2 px-5"
+              >
+                Result
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="[&>tr:nth-child(2n+1)]:bg-cyian-2 [&>tr:nth-child(2n)]:bg-cyian-1"
+          >
+            <tr>
+              <td class="border border-slate-300 py-2 text-left px-5">
+                Celsius
+              </td>
+              <td
+                id="celcius"
+                class="border border-slate-300 py-2 text-left px-5"
+              >
+                0
+              </td>
+            </tr>
+            <tr>
+              <td class="border border-slate-300 py-2 text-left px-5">
+                Fahreinheit
+              </td>
+              <td
+                id="fahrenheit"
+                class="border border-slate-300 py-2 text-left px-5"
+              >
+                0
+              </td>
+            </tr>
+            <tr>
+              <td class="border border-slate-300 py-2 text-left px-5">
+                Kelvin
+              </td>
+              <td
+                id="kelvin"
+                class="border border-slate-300 py-2 text-left px-5"
+              >
+                0
+              </td>
+            </tr>
+            <tr>
+              <td class="border border-slate-300 py-2 text-left px-5">
+                Reamur
+              </td>
+              <td
+                id="reamur"
+                class="border border-slate-300 py-2 text-left px-5"
+              >
+                0
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="mt-[20px] py-5 bg-cyan-800 relative bottom-0">
+      <div class="container">
+        <div class="w-full text-white text-center">
+          <p>&copy; susilatropika8@gmail.com</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../dist/script.js"></script>
+  </body>
+</html>
